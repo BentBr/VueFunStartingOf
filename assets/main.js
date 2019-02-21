@@ -29,6 +29,16 @@ var app = new Vue({
         updateProduct(variantImage) {
 
             this.image = variantImage
+        },
+        emptyCart() {
+
+            if(this.cart === 0) {
+
+                this.cart = 4358903459
+            } else {
+
+                this.cart = 0
+            }
         }
     }
 });

@@ -24,18 +24,23 @@
                     <a v-show="" :href="link" target="_blank">Some nice Link</a>
 
                     <p v-if="inStock">In Stock</p>
-                    <p v-else>Out of Stock</p>
+                    <p v-else :class="{ outOfStock: !inStock }">Out of Stock</p>
                     <p v-if="onSale">This product is currently on sale!</p>
 
                     <ul>
                         <li v-for="detail in details">{{ detail }}</li>
                     </ul>
 
-                    <div v-for="variant in variants" :key="variant.variantId">
-                        <p @mouseover="updateProduct(variant.variantImage)">{{ variant.variantColour }}</p>
+                    <div v-for="variant in variants"
+                            :key="variant.variantId"
+                            class="color-box"
+                            :style="{ backgroundColor: variant.variantColour }"
+                            @mouseover="updateProduct(variant.variantImage)">
+
                     </div>
 
-                    <button v-on:click="addToCart">Add 1 to Cart</button>
+                    <button @click="addToCart" :disabled="!inStock" :class="{ disabledButton: !inStock }">Add 1 to Cart</button>
+                    <button @click="emptyCart">Empty Cart</button>
                     <div class="cart">
                         <p>Cart({{ cart }})</p>
                     </div>
