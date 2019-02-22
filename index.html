@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
         <title>Product App</title>
         <link rel="stylesheet" type="text/css" href="./assets/styles.css">
     </head>
@@ -10,45 +11,14 @@
         <div class="nav-bar"></div>
 
         <div id="app">
-            <div class="product">
 
-                <div class="product-image">
-                    <img :src="image">
-                </div>
-
-                <div class="product-info">
-                    <h1>{{ product }}</h1>
-
-                    <p>{{ description }}</p>
-
-                    <a v-show="" :href="link" target="_blank">Some nice Link</a>
-
-                    <p v-if="inStock">In Stock</p>
-                    <p v-else :class="{ outOfStock: !inStock }">Out of Stock</p>
-                    <p v-if="onSale">This product is currently on sale!</p>
-
-                    <ul>
-                        <li v-for="detail in details">{{ detail }}</li>
-                    </ul>
-
-                    <div v-for="variant in variants"
-                            :key="variant.variantId"
-                            class="color-box"
-                            :style="{ backgroundColor: variant.variantColour }"
-                            @mouseover="updateProduct(variant.variantImage)">
-
-                    </div>
-
-                    <button @click="addToCart" :disabled="!inStock" :class="{ disabledButton: !inStock }">Add 1 to Cart</button>
-                    <button @click="emptyCart">Empty Cart</button>
-                    <div class="cart">
-                        <p>Cart({{ cart }})</p>
-                    </div>
-
-                </div>
-
-
+            <div class="cart">
+                <p>Cart({{ cart.length }})</p>
             </div>
+
+            <product :premium="premium" :details="details" @add-to-cart="updateCart" @remove-from-cart="removeItem"></product>
+            <product :premium="false" :details="details" @add-to-cart="updateCart" @remove-from-cart="removeItem"></product>
+
         </div>
 
 
