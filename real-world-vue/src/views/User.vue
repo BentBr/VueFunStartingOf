@@ -1,12 +1,13 @@
 <template>
     <div>
-        <h1>Create Event</h1>
+        <h1>User page of {{ username }}</h1>
     </div>
 </template>
 
 <script>
     export default {
-        name: "EventCreate.vue"
+        props: ['username'],
+        name: "User.vue"
     }
 </script>
 

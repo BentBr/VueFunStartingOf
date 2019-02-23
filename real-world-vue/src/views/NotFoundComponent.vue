@@ -1,12 +1,12 @@
 <template>
     <div>
-        <h1>Create Event</h1>
+        <h1>Page not Found!</h1>
     </div>
 </template>
 
 <script>
     export default {
-        name: "EventCreate.vue"
+        name: "NotFoundComponent.vue"
     }
 </script>
 

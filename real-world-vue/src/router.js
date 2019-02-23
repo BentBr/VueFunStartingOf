@@ -3,6 +3,8 @@ import Router from "vue-router";
 import EventCreate from "./views/EventCreate";
 import EventList from "./views/EventList";
 import EventShow from "./views/EventShow";
+import User from "./views/User";
+import NotFoundComponent from "./views/NotFoundComponent";
 
 Vue.use(Router);
 
@@ -16,15 +18,26 @@ export default new Router({
       component: EventList
     },
     {
-      path: '/event',
+      path: '/event/:id',
       name: 'event-show',
-      component: EventShow
+      component: EventShow,
+      props: true
     },
     {
-      path: 'event/create',
+      path: '/event/create',
       name: 'event-create',
       component: EventCreate
     },
+    {
+      path: '/user/:username',
+      name: 'user',
+      component: User,
+      props: true
+    },
+    {
+      path: '*',
+      component: NotFoundComponent
+    }
     /*{
       path: '/about-us',
       name: 'about',
