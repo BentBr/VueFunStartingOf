@@ -71,6 +71,34 @@
           "name": "Mary Gordon"
         }
       ]
+    },
+    {
+      "id": 942564,
+      "category": "nature",
+      "organizer": {
+        "id": "123abc",
+        "name": "Bent"
+      },
+      "title": "Neues Event",
+      "description": "Huhu, ince",
+      "location": "HH",
+      "date": "2019-02-01T19:28:00.000Z",
+      "time": "16:00",
+      "attendees": []
+    },
+    {
+      "id": 205027,
+      "category": "education",
+      "organizer": {
+        "id": "123abc",
+        "name": "Bent"
+      },
+      "title": "Learning stuff",
+      "description": "huhu",
+      "location": "HH2",
+      "date": "2019-02-20T19:37:00.000Z",
+      "time": "14:00",
+      "attendees": []
     }
   ]
 }
